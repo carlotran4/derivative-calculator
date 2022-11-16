@@ -29,4 +29,7 @@ def splitTerms(myFun):
         myFunSplit.append(myFun[splitLocations[len(splitLocations)-1]+1:])
     else: myFunSplit.append(myFun)
 
+    #remove empty terms in list
+    myFunSplit.remove("")
+
     return myFunSplit
