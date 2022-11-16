@@ -1,7 +1,11 @@
 from splitTerms import splitTerms
+from  combineTerms import combineTerms
 # given a list of separated terms in form ax^n, differentiate separated terms. 
 
 def powerRule(function):
+    #split terms
+    function = splitTerms(function)
+    
     #create iterator to change values of function list
     x=0
 
@@ -16,7 +20,7 @@ def powerRule(function):
         elif i.__contains__("x"): exponent = 1
         else: exponent = 0
         #f' of a constant is 0, so term is empty
-        if exponent == 0: function[x] = ""
+        if exponent == 0: del function[x] 
         #f' of linear function is coefficient, so term = everything before the last char, or x
         elif exponent == 1: function[x] = i[:len(i)-1]
         #f' of x^n is nx^(n-1)
@@ -34,6 +38,4 @@ def powerRule(function):
         #increment iterator
         x+=1
 
-    return function
-
-print(powerRule(splitTerms("-30x^5+20x^5-2x+2")))
+    return combineTerms(function)
