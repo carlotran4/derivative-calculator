@@ -10,6 +10,6 @@ def combineTerms(function):
 
     #remove +- 
     for i in range(1,len(combined)-2):
-        if combined[i] == "-":
+        if combined[i] == "-" and combined[i-1]=="+":
             combined = combined[:i-1]+combined[i:]
     return combined

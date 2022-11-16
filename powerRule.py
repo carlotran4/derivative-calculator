@@ -1,6 +1,6 @@
 from splitTerms import splitTerms
 from  combineTerms import combineTerms
-# given a list of separated terms in form ax^n, differentiate separated terms. 
+# given function in form ax^n+bx^o..., differentiate separated terms. 
 
 def powerRule(function):
     #split terms
