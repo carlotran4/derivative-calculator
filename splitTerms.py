@@ -30,6 +30,7 @@ def splitTerms(myFun):
     else: myFunSplit.append(myFun)
 
     #remove empty terms in list
-    myFunSplit.remove("")
+    if myFunSplit[0] == "":
+        myFunSplit.remove("")
 
     return myFunSplit
